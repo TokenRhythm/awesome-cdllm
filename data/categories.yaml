@@ -1,0 +1,196 @@
+# Taxonomy of the paper list. It follows the structure of the survey
+# "Continuous-Space Diffusion and Flow Language Models: A Survey".
+#
+# Order here is the order used in README.md. Every paper in data/papers.yaml
+# names exactly one `category` id from this file; place a paper where the
+# survey discusses it (see CONTRIBUTING.md).
+
+groups:
+  - id: surveys
+    title: Surveys and Tutorials
+    emoji: "📚"
+    categories:
+      - id: surveys
+        title: Surveys and Tutorials
+        survey: "§1.2"
+        description: >-
+          Surveys, tutorials, and expert syntheses that cover continuous text diffusion.
+          Table 1 of our survey compares how each one organizes continuous models.
+
+  - id: foundations
+    title: Foundations
+    emoji: "🧱"
+    categories:
+      - id: foundations
+        title: Diffusion and Flow Foundations
+        survey: "§2.2"
+        description: >-
+          The continuous generative-modeling toolkit the field builds on: denoising diffusion,
+          score SDEs and fast solvers, flow matching and stochastic interpolants, flow maps
+          and consistency models, distillation, and guidance.
+
+  - id: state
+    title: "The State: Text Representations"
+    emoji: "🧩"
+    survey: "§3"
+    blurb: >-
+      What does one position hold? Systems grouped by the real-valued object the sampler refines.
+    categories:
+      - id: state-token
+        title: Token Embeddings
+        survey: "§3.1"
+        description: >-
+          One vector per token, looked up from a learned or frozen embedding table. Learned
+          tables need explicit token-identity anchoring to avoid embedding collapse.
+      - id: state-vocab
+        title: Vocabulary, Simplex, Spherical, and Bit States
+        survey: "§3.1"
+        description: >-
+          Vocabulary-sized logits, simplex points, and categorical beliefs; spherical and
+          probability-geometry states; analog bit codes and rendered glyphs.
+      - id: state-contextual
+        title: Contextual Encodings
+        survey: "§3.2"
+        description: >-
+          Full-length contextual states from a frozen or jointly trained encoder, read out by a
+          shared head or a separate parallel or autoregressive decoder.
+      - id: state-compressed
+        title: Compressed Latent Codes
+        survey: "§3.3"
+        description: >-
+          Codecs that compress text into fewer latent positions or narrower channels; a diffusion
+          or flow prior generates the codes and a decoder realizes the text.
+      - id: state-sentence
+        title: Sentence and Segment Vectors
+        survey: "§3.4"
+        description: >-
+          One vector per sentence or segment (for example SONAR or VAE latents), generated jointly
+          or by next-vector prediction and decoded by a separate decoder.
+      - id: state-hybrid
+        title: "Hybrid Continuous–Discrete States (Boundary)"
+        survey: "App. C.1"
+        description: >-
+          Boundary systems that pair a categorical token canvas with a real-valued channel. The
+          survey summarizes them for comparison; purely discrete diffusion models are out of scope.
+
+  - id: transition
+    title: "The Transition: Learning the Denoiser"
+    emoji: "⚙️"
+    survey: "§4"
+    blurb: >-
+      How is the state revised? What the denoiser predicts, which modules are trained in which stages, and how noise schedules and self-conditioning shape training.
+    categories:
+      - id: train-objective
+        title: Prediction Targets and Objectives
+        survey: "§4.1"
+        description: >-
+          Clean-state, noise, velocity, and token-posterior targets; endpoint token anchoring;
+          variational and probability-flow likelihood objectives; regularizers that keep the
+          state informative.
+      - id: train-recipe
+        title: Training Stages and Module Adaptation
+        survey: "§4.2"
+        description: >-
+          Staged and co-adapted codecs, learning through frozen decoders, pretraining from scratch,
+          adapting autoregressive or masked checkpoints, and reward-driven post-training.
+      - id: train-schedule
+        title: Noise Schedules and Self-Conditioning
+        survey: "§4.3"
+        description: >-
+          Noise calibrated to the embedding geometry, time reweighting, position- and
+          content-dependent schedules, learned forward paths, depth-specialized denoisers, and
+          self-conditioning.
+
+  - id: sampling
+    title: Sampling, the Text Interface, and Generation Order
+    emoji: "🚀"
+    survey: "§5"
+    blurb: >-
+      Where do words enter? Samplers and few-step routes, the text interface, generation order, and guidance.
+    categories:
+      - id: sample-fewstep
+        title: Samplers and Few-Step Generation
+        survey: "§5.1"
+        description: >-
+          Solvers, bridges, and adaptive step allocation; training for coarse updates;
+          finite-interval flow maps; distribution-matching and score-identity distillation;
+          drifting.
+      - id: decode-readout
+        title: From States to Tokens
+        survey: "§5.2"
+        description: >-
+          Clamping, projection, and expected embeddings; intermediate commitment versus
+          remasking; shared, parallel, and autoregressive decoders for generated states.
+      - id: decode-order
+        title: Generation Order and Length
+        survey: "§5.3"
+        description: >-
+          Full-sequence refinement, blockwise and next-token orders, semi-autoregressive caching,
+          sentence-level recurrence, length control, and length extrapolation.
+      - id: sample-guidance
+        title: Conditioning and Guidance
+        survey: "§5.4"
+        description: >-
+          Classifier and classifier-free guidance, gradient and probe guidance, formal-syntax
+          constraints, particle selection, and speculative drafting with flow maps.
+
+  - id: tasks
+    title: Tasks and Applications
+    emoji: "🎯"
+    survey: "§6.1, App. G"
+    blurb: >-
+      Downstream capabilities, from the six capability reviews of §6.1 and the extended catalog in Appendix G.
+    categories:
+      - id: task-control
+        title: Controllable Generation and Editing
+        survey: "§6.1.1, App. G.1"
+        description: >-
+          Attribute, syntax, and style control; source-preserving editing and style transfer;
+          detoxification, steganography, watermarking, and red-teaming.
+      - id: task-seq2seq
+        title: Sequence-to-Sequence Generation
+        survey: "§6.1.2, App. G.2"
+        description: >-
+          Source-conditioned transformation: translation, summarization, paraphrase, question
+          generation, and data-, table-, or graph-to-text generation.
+      - id: task-multimodal
+        title: Captioning and Multimodal Generation
+        survey: "§6.1.3, App. G.3"
+        description: >-
+          Image, video, audio, and speech captioning; cross-modal bridges; and joint any-to-any
+          generators that keep a continuous text channel.
+      - id: task-dialogue
+        title: Dialogue and Discourse Planning
+        survey: "§6.1.4, App. G.4"
+        description: >-
+          Dialogue, empathy, and discourse systems that plan with utterance- or paragraph-level
+          latent vectors.
+      - id: task-code
+        title: Code, Structured Outputs, and Synthetic Data
+        survey: "§6.1.5, App. G.5"
+        description: >-
+          Code generation, structured outputs, symbolic expressions, and synthetic or private
+          training corpora.
+      - id: task-reasoning
+        title: Reasoning, Knowledge, and Instruction Following
+        survey: "§6.1.6, App. G.6"
+        description: >-
+          Math and commonsense reasoning, latent thought trajectories, reinforcement-learning
+          post-training, retrieval- and knowledge-grounded generation, and instruction following.
+      - id: task-domain
+        title: Scientific and Domain Applications
+        survey: "App. G.7"
+        description: >-
+          Remote-sensing change captioning, molecular and 3D-shape captioning, radiology report
+          generation, and brain-signal decoding.
+
+  - id: evaluation
+    title: Evaluation, Analysis, and Theory
+    emoji: "📊"
+    categories:
+      - id: eval-analysis
+        title: Evaluation, Analysis, and Theory
+        survey: "§6.2–§7, App. B, D"
+        description: >-
+          Evaluation measures and likelihood estimators, benchmarks and diagnostics,
+          interpretability of generation dynamics, and theory of continuous text generators.

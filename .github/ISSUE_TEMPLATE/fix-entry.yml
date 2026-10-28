@@ -1,0 +1,23 @@
+name: Fix an entry
+description: Report a broken link, wrong venue or date, misfiled entry, or inaccurate summary.
+title: "[Fix] "
+labels: ["correction"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      description: Model name or paper title as it appears in the list.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong, and what should it be?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A link that shows the correct information.

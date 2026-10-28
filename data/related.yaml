@@ -1,0 +1,25 @@
+# Neighboring lists, rendered under "Related Awesome Lists" in README.md.
+- name: Awesome-DLMs
+  repo: VILA-Lab/Awesome-DLMs
+  description: 'Companion list of "A Survey on Diffusion Language Models", covering discrete, continuous, and multimodal diffusion language models.'
+- name: DLLM-Survey
+  repo: LiQiiiii/DLLM-Survey
+  description: 'Companion list of "Discrete Diffusion in Large Language and Multimodal Models: A Survey" (TMLR 2026).'
+- name: Awesome Discrete Diffusion Models
+  repo: kuleshov-group/awesome-discrete-diffusion-models
+  description: 'Papers and resources on discrete diffusion models.'
+- name: Diffusion-LLM-Papers
+  repo: ML-GSAI/Diffusion-LLM-Papers
+  description: 'A collection of papers on diffusion language models.'
+- name: Awesome-Parallel-Text-Generation
+  repo: zhanglingzhe0820/Awesome-Parallel-Text-Generation
+  description: 'Companion list of "A Survey on Parallel Text Generation: From Parallel Decoding to Diffusion Language Models".'
+- name: Awesome-Text-Diffusion-Models
+  repo: RUCAIBox/Awesome-Text-Diffusion-Models
+  description: 'Companion list of "Diffusion Models for Non-autoregressive Text Generation: A Survey" (IJCAI 2023).'
+- name: diffusion-nlp-paper-arxiv
+  repo: bansky-cl/diffusion-nlp-paper-arxiv
+  description: 'An automatically updated feed of arXiv papers on diffusion models for NLP.'
+- name: Awesome-Diffusion-Models
+  repo: diff-usion/Awesome-Diffusion-Models
+  description: 'Resources and papers on diffusion models across modalities.'

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this list, please cite the survey it accompanies."
+title: "Awesome CDLLM: Continuous-Space Diffusion and Flow Language Models"
+type: dataset
+authors:
+  - name: "TokenRhythm Technologies"
+repository-code: "https://github.com/TokenRhythm/awesome-cdllm"
+license: CC0-1.0
+keywords:
+  - continuous diffusion
+  - flow matching
+  - diffusion language models
+  - text generation
+  - survey
+preferred-citation:
+  type: article
+  title: "Continuous-Space Diffusion and Flow Language Models: A Survey"
+  authors:
+    - name: "TokenRhythm Technologies"
+  year: 2026
+  month: 10
+  url: "https://github.com/TokenRhythm/awesome-cdllm"

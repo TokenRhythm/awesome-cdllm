@@ -1,0 +1,33 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Parse repository YAML (issue forms, workflows, CITATION.cff)
+        run: |
+          python - <<'EOF'
+          import glob, yaml
+          files = glob.glob(".github/**/*.yml", recursive=True) + ["CITATION.cff"]
+          for f in files:
+              with open(f, encoding="utf-8") as fh:
+                  yaml.safe_load(fh)
+          print(f"parsed {len(files)} YAML files")
+          EOF
+      - name: Unit tests
+        run: python -m unittest discover -s scripts -p "test_*.py"
+      - name: Validate data and check that generated files are up to date
+        run: python scripts/build_readme.py --check

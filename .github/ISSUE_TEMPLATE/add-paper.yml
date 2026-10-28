@@ -1,0 +1,73 @@
+name: Suggest a paper
+description: Propose a continuous-space diffusion or flow language model paper for the list.
+title: "[Paper] "
+labels: ["new paper"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion! This list is strictly about models that generate text or code through a
+        **continuous** diffusion, flow, flow-map, or drifting process over real-valued representations, and
+        studies of such models. Purely discrete or masked diffusion LMs are out of scope (see CONTRIBUTING.md).
+        The Surveys and Foundations sections also accept selected background references.
+  - type: input
+    id: title
+    attributes:
+      label: Paper title
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Paper link
+      description: arXiv abstract page, ACL Anthology, OpenReview, or publisher page.
+      placeholder: https://arxiv.org/abs/xxxx.xxxxx
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Official code (optional)
+      placeholder: https://github.com/owner/repo
+  - type: input
+    id: venue
+    attributes:
+      label: Venue (optional)
+      placeholder: e.g., ICLR 2027, or arXiv
+  - type: dropdown
+    id: category
+    attributes:
+      label: Suggested section
+      options:
+        - "The State: Token Embeddings"
+        - "The State: Vocabulary, Simplex, Spherical, and Bit States"
+        - "The State: Contextual Encodings"
+        - "The State: Compressed Latent Codes"
+        - "The State: Sentence and Segment Vectors"
+        - "The State: Hybrid Continuous–Discrete States"
+        - "The Transition: Prediction Targets and Objectives"
+        - "The Transition: What Is Trained"
+        - "The Transition: Noise Schedules and Self-Conditioning"
+        - "Sampling: Samplers and Few-Step Generation"
+        - "Sampling: From States to Tokens"
+        - "Sampling: Generation Order and Length"
+        - "Sampling: Conditioning and Guidance"
+        - "Tasks: Controllable Generation and Editing"
+        - "Tasks: Sequence-to-Sequence Generation"
+        - "Tasks: Captioning and Multimodal Generation"
+        - "Tasks: Dialogue and Discourse Planning"
+        - "Tasks: Code, Structured Outputs, and Synthetic Data"
+        - "Tasks: Reasoning, Knowledge, and Instruction Following"
+        - "Tasks: Scientific and Domain Applications"
+        - "Evaluation, Analysis, and Theory"
+        - "Surveys and Tutorials"
+        - "Not sure"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Why it belongs here
+      description: One or two sentences on what continuous state the model refines and what it shows.
+    validations:
+      required: true

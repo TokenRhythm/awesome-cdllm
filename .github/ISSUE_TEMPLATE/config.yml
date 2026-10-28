@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the survey
+    url: https://github.com/TokenRhythm/awesome-cdllm/blob/main/paper/CDLLM_Survey.pdf
+    about: "Continuous-Space Diffusion and Flow Language Models: A Survey (TokenRhythm Technologies)."
