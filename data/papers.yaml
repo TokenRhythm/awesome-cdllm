@@ -1350,6 +1350,15 @@
   summary: Redraws a step-local Gaussian latent at each masked-diffusion step, learned with a recognition model and variational bounds, so few-step categorical sampling can capture correlations among tokens.
 
 # ---------------------------------------------------------------- train-objective
+- id: jiang2026continued
+  name: TIBF
+  title: Continued Training of Continuous Language Flows with Token Identity Squared Supervision
+  authors: Jiawei Jiang, Zhaoxiang Zang, Zhengtao Yu
+  venue: arXiv
+  date: 2026-11
+  paper: https://arxiv.org/abs/2611.07721
+  category: train-objective
+  summary: Continues pretrained language flows with Brier supervision of token-identity probabilities over frozen embeddings, lowering generative perplexity on OWT and LM1B below continuous-MSE and cross-entropy continuation at every tested sampling budget.
 - id: li2026convergeflow
   name: ConvergeFlow
   title: 'ConvergeFlow: Language Flow with Provable Convergence to Token Embeddings'
@@ -2185,13 +2194,14 @@
     task: one-step LM; prefix LM; Sudoku
     section: §5.1
 - id: anonymous2026asynchronous
-  title: Asynchronous Flow Maps for Flow Language Models
-  authors: Anonymous
-  venue: ICLR 2027 submission
-  date: '2026'
-  paper: https://openreview.net/forum?id=GpVgI7Kpu4
+  name: aFMLM
+  title: Asynchronous Flow Map Language Models
+  authors: Chanhyuk Lee, Wonjung Kim, Patrick Pynadath, Jaehoon Yoo, Satoshi Hayakawa, Ruqi Zhang, Jinwoo Kim, Seunghoon Hong
+  venue: arXiv
+  date: 2026-10
+  paper: https://arxiv.org/abs/2610.42018
   category: sample-fewstep
-  summary: Introduces asynchronous flow maps for flow language models, extending finite-interval flow-map transport for few-step text generation.
+  summary: Distills asynchronous flows with prescribed or learned tokenwise schedules into flow maps that internalize prediction order in one forward pass, reporting state-of-the-art one-step Sudoku and GSM8K code-generation accuracy.
 - id: anonymous2026train
   title: How to Train Your Latent Flow Map for Few-Step Text Generation
   authors: Anonymous
@@ -2571,12 +2581,12 @@
 - id: anonymous2026rangeswa
   name: RangeSWA
   title: 'RangeSWA: Training-Free Length Extrapolation for Continuous Diffusion Language Models'
-  authors: Anonymous
-  venue: ARR submission
+  authors: Guangfu Guo, Xiaoqian Lu, Linsey Pang, Weiran Yao, Haolin Chen, Long Cheng, Kunpeng Liu
+  venue: arXiv
   date: 2026-10
-  paper: https://openreview.net/forum?id=614wZmgrF5
+  paper: https://arxiv.org/abs/2610.42084
   category: decode-order
-  summary: Extends continuous diffusion language models beyond their training sequence length with a training-free length-extrapolation method applied at inference.
+  summary: Extrapolates continuous diffusion language models beyond training length without retraining via local windows, remote block summaries, dynamic retrieval, and positional remapping, reducing perplexity and repetition on ELF-M/L through 8k tokens.
 - id: tang2026expanding
   name: EFlow / EFM
   title: Expanding Flow Maps
@@ -2825,6 +2835,16 @@
     section: §5.4
 
 # ---------------------------------------------------------------- task-control
+- id: li2026transferable
+  name: LCVR
+  title: Transferable Structural Priors in Continuous Diffusion Language Models
+  authors: Hao Li, Man Fung Zhuo, Xinqi Liu, Jiayu Wu, Yifan Hong
+  venue: IJCNLP-AACL 2026
+  date: 2026-11
+  paper: https://aclanthology.org/2026.aacl-short.54/
+  code: Hflying/priordiff
+  category: task-control
+  summary: Diagnoses boundary-attention and vocabulary-projection failures of Diffusion-LM under hard templates, enforces structure with position-template Voronoi rounding, and shows structurally compatible backbone transfer cuts training steps about tenfold.
 - id: allawati2026diffusion
   title: Diffusion Language Models for Perplexity-Aware Black-Box Attacks
   authors: Ali Al-Lawati, Elsayed Eshra, Dongwon Lee, Suhang Wang
@@ -4321,6 +4341,15 @@
   summary: Decodes visually evoked fMRI into captions and reconstructed images with one latent diffusion model, mapping voxels to text and image latents and guiding denoising with fMRI-derived conditions.
 
 # ---------------------------------------------------------------- eval-analysis
+- id: christoforos2026sparse
+  name: DualBudget
+  title: 'Sparse Text Diffusion under Dual Budgets: Context Connectivity and Expert Activation'
+  authors: Alexandros Christoforos, Chadbourne Davis, Paul Raj
+  venue: arXiv
+  date: 2026-10
+  paper: https://arxiv.org/abs/2610.41487
+  category: eval-analysis
+  summary: Treats attention edges and activated experts as separate budgets for Gaussian embedding-diffusion denoisers, analyzing a reported sparse-expert configuration across scientific summarization, multi-hop question answering, dialogue, and sentence-pair prediction.
 - id: kornhardt2026sol
   name: SOL
   title: 'SOL: Measuring Gaps between Text Distributions by Double Sliced Wasserstein Metrics'
@@ -4402,12 +4431,12 @@
   summary: Interprets generation dynamics in continuous flow language models by tracing how intermediate states evolve, informing inference-time choices such as step allocation and halting.
 - id: anonymous2026generative
   title: The Generative Gap Between Speculative Drafter and Continuous Diffusion Language Model
-  authors: Anonymous
-  venue: ICLR 2027 submission
-  date: '2026'
-  paper: https://openreview.net/forum?id=mgQmqz3bom
+  authors: Yujian Chen, Hao Jiang, Guang Cheng, Weijian Luo, Tianyang Hu
+  venue: arXiv
+  date: 2026-10
+  paper: https://arxiv.org/abs/2610.40847
   category: eval-analysis
-  summary: Compares the continuous diffusion language model LangFlow with standalone DSpark drafter adaptations in standalone generation to characterize the generative gap between the two approaches.
+  summary: Compares LangFlow with standalone Markov and recurrent-head DSpark drafters on unconditional OpenWebText, finding LangFlow ahead on GenPPL and MAUVE at lengths 128 and 1024 while DSpark-RNN leads at 16.
 - id: anonymous2026truncation
   title: 'The Truncation Trap: Silent Failure of Fixed-Window Diffusion Likelihood and Information Estimators under Representation Drift'
   authors: Anonymous

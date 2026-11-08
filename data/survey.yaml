@@ -7,12 +7,17 @@ authors: "TokenRhythm Technologies"
 month: "October 2026"
 pages: 133
 coverage: "24 October 2026"
+list_coverage: "8 November 2026"  # the paper list can run ahead of the survey's cutoff
 pdf: paper/CDLLM_Survey.pdf
 arxiv: null
 repo: TokenRhythm/awesome-cdllm
 bibkey: tokenrhythm2026cdllm
 
 news:
+  - date: "2026-11"
+    text: >-
+      📌 The paper list now extends past the survey's 24 October cutoff and tracks literature through
+      8 November 2026, with new papers and the public versions of earlier anonymous submissions.
   - date: "2026-10"
     text: >-
       🎉 Our survey **Continuous-Space Diffusion and Flow Language Models: A Survey** is out

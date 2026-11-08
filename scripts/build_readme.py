@@ -271,7 +271,7 @@ def build_readme(groups, papers, survey, related):
         "PAPER_COUNT": str(len(papers)),
         "RELATED": render_related(related),
         "BIBTEX": render_bibtex(survey),
-        "COVERAGE": survey["coverage"],
+        "COVERAGE": survey.get("list_coverage", survey["coverage"]),
     }
     text = TEMPLATE.read_text(encoding="utf-8")
     for key, value in values.items():
