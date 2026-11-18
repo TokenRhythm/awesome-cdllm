@@ -2,6 +2,24 @@
 # Field reference and scope rules: CONTRIBUTING.md. Categories: data/categories.yaml.
 
 # ---------------------------------------------------------------- surveys
+- id: tang2026survey
+  title: A Survey on Continuous Diffusion and Flow Language Models
+  authors: Sophia Tang, Chanhyuk Lee, Floor Eijkelboom, Jinwoo Kim
+  venue: alphaXiv
+  date: 2026-11
+  paper: https://www.alphaxiv.org/abs/2611.continuous-diffusion-flow-language-models
+  code: sophtang/Awesome-Continuous-Language-Models
+  category: surveys
+  summary: Organizes continuous language models by text representation, training objective, and sampling strategy, tracing how flow maps and distillation adapted from image generation enable few-step text generation.
+- id: oba2026diffusion
+  title: 'Diffusion Language Models: Foundations and Frontiers of Non-Autoregressive Language Generation'
+  authors: Daisuke Oba, Danushka Bollegala
+  venue: IJCNLP-AACL 2026 Tutorial
+  date: 2026-11
+  paper: https://aclanthology.org/2026.aacl-tutorials.6/
+  project: https://dllm-aacl.github.io/
+  category: surveys
+  summary: Introduces diffusion language modeling and parallel decoding, compares how studies measure generation speed, and discusses continuous flow-based language models alongside discrete formulations.
 - id: yu2026latent
   name: The Latent Space
   title: 'The Latent Space: Foundation, Evolution, Mechanism, Ability, and Outlook'
@@ -1650,6 +1668,16 @@
     section: §4.2
 
 # ---------------------------------------------------------------- train-schedule
+- id: deschenaux2026loopholing
+  name: LAW
+  title: 'Loopholing All the Way: Language Modeling with pure Self-Conditioning'
+  authors: Adrien Deschenaux, Nadezhda Ilieva, Justin Deschenaux, Manuel Madeira, Dorina Thanou, Aurélien Lucchi, Antonio Orvieto, Caglar Gulcehre, Pascal Frossard
+  venue: NeurIPS 2026 BeNTo Workshop
+  date: 2026-10
+  paper: https://arxiv.org/abs/2610.30068
+  code: ilievanadezhda/law
+  category: train-schedule
+  summary: Passes each position’s expected token embedding to the next denoising step and decodes tokens only at the end, improving GSM8K accuracy when fine-tuning Duo.
 - id: luo2026designing
   name: LangDiT
   title: Designing Transformers for Continuous Diffusion Language Models
@@ -1871,6 +1899,15 @@
     section: §4.3
 
 # ---------------------------------------------------------------- sample-fewstep
+- id: li2026riemannian
+  name: R-WGF
+  title: One-Step Generation via Riemannian Wasserstein Gradient Flows
+  authors: David Li, Chanhyuk Lee, Jaehoon Yoo, Nikita Gushchin, Floor Eijkelboom, Eric Moulines, Maxim Panov, Alexander Korotin, Seunghoon Hong, Jinwoo Kim
+  venue: NeurIPS 2026 DiffuLM Workshop
+  date: 2026-10
+  paper: https://arxiv.org/abs/2610.04454
+  category: sample-fewstep
+  summary: Fine-tunes a flow language model with Wasserstein gradient updates on a product of probability simplices, reaching 122.54 generative perplexity in one step on LM1B.
 - id: zheng2026step
   name: StepTune
   title: 'A Step in the Right Place: Understanding and Optimizing Timestep Placement in Continuous Diffusion Language Models'
@@ -2467,13 +2504,13 @@
     task: unconditional LM; Sudoku
     section: §5.2
 - id: du2026continuous
-  title: Continuous Language Diffusion as a Decoder-Interface Problem
+  title: What Simple Readouts Miss in Continuous Language Diffusion
   authors: Zhicheng Du, Lan Ma
   venue: arXiv
   date: 2026-06
   paper: https://arxiv.org/abs/2606.08810
   category: decode-readout
-  summary: Frames continuous language diffusion as a decoder-interface problem, tracing reliable ELF denoising to decoder basins, and shows literal early-exit monitoring saves denoiser calls yet increases elapsed time.
+  summary: Recovers 97.17% of ELF and 95.74% of AURORA token decisions with token-wise affine readouts, finding opposite evaluator effects when correcting equal numbers of rare and low-margin predictions.
 - id: agarwal2026posterior
   name: Posterior Refinement
   title: 'Posterior Refinement: Fast Language Generation via Any-Order Flow Maps'
@@ -2683,6 +2720,25 @@
   summary: Scales blockwise simplex-logit diffusion to 13B from OPT-13B and shows that inference-time logit-level collaboration with a domain expert improves automatic relevance and factuality over standalone generation, unlike token-level collaboration between OPT models.
 
 # ---------------------------------------------------------------- sample-guidance
+- id: aktas2026chainflow
+  name: ChainFlow
+  title: 'ChainFlow: Few-Step Latent Flow Matching for Speculative Decoding'
+  authors: Selim Aktas, Yusuf Erdem Erdem, Ahmed Zeer, Himmet Toprak Kesgin, Muzaffer Kaan Yuce, Mehmet Fatih Amasyali
+  venue: arXiv
+  date: 2026-11
+  paper: https://arxiv.org/abs/2611.08669
+  code: Cosmos-YTU/chain-flow
+  category: sample-guidance
+  summary: Drafts token blocks with one or two flow steps over compressed target-model hidden states, using feedback between token predictions before autoregressive verification.
+- id: tu2026steering
+  name: JC-MC
+  title: Steering Embedded Language Flows with Formal Constraints
+  authors: Xiao Tu, Yuntong Gu, Xiangming Meng
+  venue: NeurIPS 2026 DiffuLM Workshop
+  date: '2026'
+  paper: https://neurips.cc/virtual/2026/175961
+  category: sample-guidance
+  summary: Guides ELF with gradients of regular-expression acceptance through its decoder, raising macro constraint satisfaction from 87.25% with one endpoint to 94.42% with four Gaussian endpoint samples.
 - id: shen2026flashmap
   name: FlashMap
   title: 'FlashMap: Flow Map Speculative Decoding'
@@ -3214,6 +3270,15 @@
   summary: Enhances generative retrieval by using a diffusion model to generate pseudo-documents that a downstream retriever consumes through constrained decoding.
 
 # ---------------------------------------------------------------- task-multimodal
+- id: kang2026uniladir
+  name: Uni-LaDiR
+  title: 'Uni-LaDiR: Latent Diffusion Unifies Multimodal Reasoning'
+  authors: Haoqiang Kang, Yizhe Zhang, Nikki Lijing Kuang, Jiatao Gu, Yian Ma, Lianhui Qin
+  venue: arXiv
+  date: 2026-09
+  paper: https://arxiv.org/abs/2609.19878
+  category: task-multimodal
+  summary: Encodes multimodal reasoning steps in a shared latent space and learns a flow to generate latent thought blocks that condition a vision-language model’s text answers.
 - id: li2026juice
   name: JUICE
   title: 'JUICE: Unified Multimodal Modeling in Pretrained Representation Spaces'
