@@ -4074,7 +4074,7 @@
 - id: sigma2026
   name: Sigma
   title: Large Language Continuous Diffusion Models
-  authors: Zhihan Yang, Wei Guo, Jean-Marie Lemercier, Simon Welker, Yonggan Fu, Mohammad Mahdi Kamani, Sajad Norouzi, Julius Berner, Tomas Geffner, Karsten Kreis, Yongxin Chen, Molei Tao, John Thickstun, Pavlo Molchanov, Ante Jukić, Arash Vahdat, Morteza Mardani
+  authors: Zhihan Yang, Wei Guo, Jean-Marie Lemercier, Simon Welker, Mohammad Mahdi Kamani, Yonggan Fu, Sajad Norouzi, Julius Berner, Tomas Geffner, Karsten Kreis, Yongxin Chen, Molei Tao, John Thickstun, Pavlo Molchanov, Ante Jukić, Arash Vahdat, Morteza Mardani
   venue: arXiv
   date: 2026-10
   paper: https://arxiv.org/abs/2610.02665
