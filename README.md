@@ -13,13 +13,13 @@
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
   <a href="paper/CDLLM_Survey.pdf"><img src="https://img.shields.io/badge/Survey-PDF-b31b1b?logo=adobeacrobatreader&logoColor=white" alt="Survey PDF"></a>
   <a href="#citation"><img src="https://img.shields.io/badge/arXiv-coming_soon-lightgrey?logo=arxiv&logoColor=white" alt="arXiv: coming soon"></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/papers-349-2F5D8A" alt="349 papers"></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/papers-356-2F5D8A" alt="356 papers"></a>
   <a href="https://github.com/TokenRhythm/awesome-cdllm/commits/main"><img src="https://img.shields.io/github/last-commit/TokenRhythm/awesome-cdllm?color=2E6B3A" alt="Last commit"></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-E9A23B" alt="PRs welcome"></a>
 </p>
 
 <p align="center">
-  <b><a href="paper/CDLLM_Survey.pdf">📄 Read the survey</a></b> · <b><a href="#contents">📚 Browse 349 papers</a></b> · <b><a href="docs/core-systems.md">🗺️ Compare core systems</a></b> · <b><a href="#citation">📝 Cite</a></b>
+  <b><a href="paper/CDLLM_Survey.pdf">📄 Read the survey</a></b> · <b><a href="#contents">📚 Browse 356 papers</a></b> · <b><a href="docs/core-systems.md">🗺️ Compare core systems</a></b> · <b><a href="#citation">📝 Cite</a></b>
 </p>
 
 <p align="center">
@@ -29,6 +29,7 @@
 
 ## 📢 News
 
+- **[2026-11]** Added seven papers through 18 November, including ChainFlow on speculative decoding, LAW on self-conditioning, and a new survey and tutorial. Updated the ELF and AURORA readout study to its November revision.
 - **[2026-11]** 📌 The paper list now extends past the survey's 24 October cutoff and tracks literature through 8 November 2026, with new papers and the public versions of earlier anonymous submissions.
 - **[2026-10]** 🎉 Our survey **Continuous-Space Diffusion and Flow Language Models: A Survey** is out ([PDF](paper/CDLLM_Survey.pdf)), together with this paper list, which tracks literature through 24 October 2026. The arXiv version is coming soon.
 
@@ -51,7 +52,7 @@
 ## Contents
 
 - [🧭 The Survey at a Glance](#survey-at-a-glance)
-- [📚 Surveys and Tutorials](#surveys) (7)
+- [📚 Surveys and Tutorials](#surveys) (9)
 - [🧱 Foundations](#foundations) (15)
 - [🧩 The State: Text Representations](#state) (76)
   - [Token Embeddings](#state-token) (11)
@@ -60,19 +61,19 @@
   - [Compressed Latent Codes](#state-compressed) (13)
   - [Sentence and Segment Vectors](#state-sentence) (8)
   - [Hybrid Continuous–Discrete States (Boundary)](#state-hybrid) (11)
-- [⚙️ The Transition: Learning the Denoiser](#transition) (37)
+- [⚙️ The Transition: Learning the Denoiser](#transition) (38)
   - [Prediction Targets and Objectives](#train-objective) (14)
   - [Training Stages and Module Adaptation](#train-recipe) (7)
-  - [Noise Schedules and Self-Conditioning](#train-schedule) (16)
-- [🚀 Sampling, the Text Interface, and Generation Order](#sampling) (64)
-  - [Samplers and Few-Step Generation](#sample-fewstep) (37)
+  - [Noise Schedules and Self-Conditioning](#train-schedule) (17)
+- [🚀 Sampling, the Text Interface, and Generation Order](#sampling) (67)
+  - [Samplers and Few-Step Generation](#sample-fewstep) (38)
   - [From States to Tokens](#decode-readout) (6)
   - [Generation Order and Length](#decode-order) (11)
-  - [Conditioning and Guidance](#sample-guidance) (10)
-- [🎯 Tasks and Applications](#tasks) (136)
+  - [Conditioning and Guidance](#sample-guidance) (12)
+- [🎯 Tasks and Applications](#tasks) (137)
   - [Controllable Generation and Editing](#task-control) (23)
   - [Sequence-to-Sequence Generation](#task-seq2seq) (15)
-  - [Captioning and Multimodal Generation](#task-multimodal) (51)
+  - [Captioning and Multimodal Generation](#task-multimodal) (52)
   - [Dialogue and Discourse Planning](#task-dialogue) (7)
   - [Code, Structured Outputs, and Synthetic Data](#task-code) (10)
   - [Reasoning, Knowledge, and Instruction Following](#task-reasoning) (23)
@@ -143,6 +144,8 @@ The survey organizes the literature around **three coupled design dimensions**:
 
 | Model | Paper | Venue | Date | Code |
 | :-- | :-- | :--: | :--: | :--: |
+| — | [Diffusion Language Models: Foundations and Frontiers of Non-Autoregressive Language Generation](https://aclanthology.org/2026.aacl-tutorials.6/)<br>Introduces diffusion language modeling and parallel decoding, compares how studies measure generation speed, and discusses continuous flow-based language models alongside discrete formulations. | IJCNLP-AACL 2026 Tutorial | 2026.11 | [Project](https://dllm-aacl.github.io/) |
+| — | [A Survey on Continuous Diffusion and Flow Language Models](https://www.alphaxiv.org/abs/2611.continuous-diffusion-flow-language-models)<br>Organizes continuous language models by text representation, training objective, and sampling strategy, tracing how flow maps and distillation adapted from image generation enable few-step text generation. | alphaXiv | 2026.11 | [![GitHub stars](https://img.shields.io/github/stars/sophtang/Awesome-Continuous-Language-Models?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/sophtang/Awesome-Continuous-Language-Models) |
 | **The Latent Space** | [The Latent Space: Foundation, Evolution, Mechanism, Ability, and Outlook](https://arxiv.org/abs/2604.02029)<br>Examines latent-space computation in language-based models, organizing reasoning, planning, and memory work by mechanism and capability across Foundation, Evolution, Mechanism, Ability, and Outlook perspectives. | arXiv | 2026.04 | [![GitHub stars](https://img.shields.io/github/stars/xlyu0106/Awesome-Latent-Space?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/xlyu0106/Awesome-Latent-Space) |
 | — | [Continuous diffusion language models](https://sander.ai/2026/08/24/continuous-dlms.html)<br>Synthesizes in a blog post the case for revisiting continuous diffusion language models, covering embeddings, losses, schedules, self-conditioning, and distillability. | Blog | 2026 | — |
 | — | [A Survey on Diffusion Language Models](https://arxiv.org/abs/2508.10875)<br>Traces the diffusion language model landscape, centering on discrete diffusion while devoting one chronological section to continuous models from Diffusion-LM to ELF, Cola, and BitLM. | arXiv | 2025.08 | [![GitHub stars](https://img.shields.io/github/stars/VILA-Lab/Awesome-DLMs?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/VILA-Lab/Awesome-DLMs) |
@@ -373,6 +376,7 @@ The survey organizes the literature around **three coupled design dimensions**:
 | Model | Paper | Venue | Date | Code |
 | :-- | :-- | :--: | :--: | :--: |
 | **DoubleCat / SemiCat** [◆](docs/core-systems.md#system-davis2026design "Core system in the survey's lookup table (Appendix F)") | [On the Design Space of Continuous Diffusion Language Models](https://arxiv.org/abs/2610.13834)<br>Explains self-conditioning as correcting a train–inference mismatch and recovers its gain without a second pass by corrupting the simplex endpoint (DoubleCat), while analyzing how cross-entropy shapes embedding geometry. | arXiv | 2026.10 | — |
+| **LAW** | [Loopholing All the Way: Language Modeling with pure Self-Conditioning](https://arxiv.org/abs/2610.30068)<br>Passes each position’s expected token embedding to the next denoising step and decodes tokens only at the end, improving GSM8K accuracy when fine-tuning Duo. | NeurIPS 2026 BeNTo Workshop | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/ilievanadezhda/law?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/ilievanadezhda/law) |
 | **LangDiT** [◆](docs/core-systems.md#system-luo2026designing "Core system in the survey's lookup table (Appendix F)") | [Designing Transformers for Continuous Diffusion Language Models](https://arxiv.org/abs/2610.22330)<br>Redesigns the Transformer denoiser for continuous diffusion language models with normalization, wider noise conditioning, and entropy-gated self-conditioning, the gate giving the largest single improvement in generative perplexity in LangFlow ablations. | arXiv | 2026.10 | — |
 | **TTCD** [◆](docs/core-systems.md#system-bansal2026token "Core system in the survey's lookup table (Appendix F)") | [Token Time Continuous Diffusion for Language Modeling](https://openreview.net/forum?id=HSVpmk76UW)<br>Assigns each token its own time via entropy ranking in a deterministic continuous diffusion, and shortcut training cuts OpenWebText prefix-continuation GenPPL from 1033.8 to 437.82 at four updates. | NeurIPS 2026 | 2026.07 | — |
 | — | [A Dominant Self-Conditioning Direction Drives Repetition in Unconditional Continuous Diffusion Language Models](https://arxiv.org/abs/2607.00588)<br>Traces repetition under heavily weighted self-conditioning feedback to a dominant one-dimensional attractor and counters it with the training-free Attractor-Contrast-Escape (ACE) correction, showing in its original arXiv version that scoring a low-repetition accepted subset reverses the ELF-B/ELF-M ranking. | arXiv | 2026.07 | [![GitHub stars](https://img.shields.io/github/stars/ZhangShuai1230/ACE-DLM?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/ZhangShuai1230/ACE-DLM) |
@@ -407,6 +411,7 @@ The survey organizes the literature around **three coupled design dimensions**:
 | **ReLaDrift** | [ReLaDrift: Recurrent Language Generation via Drifting for Test-Time Scaling](https://arxiv.org/abs/2610.23225)<br>Iterates a shared drifting generator to refine a noise-initialized draft in continuous latent space, trained over sampled round counts so extra rounds trade computation for quality. | arXiv | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/Yuki-Ots/ReLaDrift?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/Yuki-Ots/ReLaDrift) |
 | **ReSFlow** | [Rectifying Categorical Flows on Statistical Manifolds for One-Step Generation](https://openreview.net/forum?id=WQqyE4RiCg)<br>Rectifies continuous flows on statistical manifolds into geodesic, reflow-style trajectories that respect the intrinsic Riemannian geometry, enabling one-step categorical generation. | NeurIPS 2026 | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/xiaohuanjia/ReSFlow?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/xiaohuanjia/ReSFlow) |
 | **Seq-Drifting** [◆](docs/core-systems.md#system-liu2026one "Core system in the survey's lookup table (Appendix F)") | [One-Step Text Generation by Seq-Drifting](https://arxiv.org/abs/2610.12879)<br>Maps Gaussian noise to continuous token embeddings in one pass, training the generator on a drift field that attracts outputs toward contextually plausible tokens and repels collapse and repetition. | arXiv | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/jyliu-ai/Seq-Drifting?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/jyliu-ai/Seq-Drifting) |
+| **R-WGF** | [One-Step Generation via Riemannian Wasserstein Gradient Flows](https://arxiv.org/abs/2610.04454)<br>Fine-tunes a flow language model with Wasserstein gradient updates on a product of probability simplices, reaching 122.54 generative perplexity in one step on LM1B. | NeurIPS 2026 DiffuLM Workshop | 2026.10 | — |
 | **GSF** [◆](docs/core-systems.md#system-kim2026gumbel "Core system in the survey's lookup table (Appendix F)") | [Gumbel Straight Flow: Distilling Autoregressive Models into One-step Flow Maps](https://arxiv.org/abs/2610.00497)<br>Pairs Gumbel noise with sequences from a pretrained autoregressive teacher along non-intersecting straight paths, supervising a one-step flow map whose longer intervals are trained by a semigroup loss. | arXiv | 2026.10 | — |
 | **BCT** [◆](docs/core-systems.md#system-oba2026bct "Core system in the survey's lookup table (Appendix F)") | [BCT: Bayes-Consistent Tempering for Flow Language Models](https://arxiv.org/abs/2610.27641)<br>Makes temperature consistent across the endpoint, bridge, and velocity of posterior-induced flow language models, substantially improving S-FLM's low-temperature math reasoning accuracy over standard tempering and narrowing the gap to discrete diffusion. | arXiv | 2026.10 | — |
 | **aFMLM** | [Asynchronous Flow Map Language Models](https://arxiv.org/abs/2610.42018)<br>Distills asynchronous flows with prescribed or learned tokenwise schedules into flow maps that internalize prediction order in one forward pass, reporting state-of-the-art one-step Sudoku and GSM8K code-generation accuracy. | arXiv | 2026.10 | — |
@@ -452,8 +457,8 @@ The survey organizes the literature around **three coupled design dimensions**:
 | :-- | :-- | :--: | :--: | :--: |
 | **HC-DLM** [◆](docs/core-systems.md#system-ren2026hierarchical "Core system in the survey's lookup table (Appendix F)") | [Hierarchical Continuous Diffusion Language Models](https://arxiv.org/abs/2610.02193)<br>Carries only a continuous latent between flow-matching steps, conditioning each update on a re-noised argmax token scaffold whose removal sharply degrades combinatorial puzzle accuracy. | arXiv | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/rhfeiyang/HC-DLM?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/rhfeiyang/HC-DLM) |
 | **GRAFT** [◆](docs/core-systems.md#system-yang2026graft "Core system in the survey's lookup table (Appendix F)") | [GRAFT: Restoring the Missing Sampling Interface in Continuous Diffusion Language Models](https://arxiv.org/abs/2610.29136)<br>Holds mid-sampling rare-word candidates from frozen ELF and LangFlow vocabulary heads as conditions and restarts from the same noise, restoring rare-word frequencies to near-human rates. | arXiv | 2026.10 | — |
+| — | [What Simple Readouts Miss in Continuous Language Diffusion](https://arxiv.org/abs/2606.08810)<br>Recovers 97.17% of ELF and 95.74% of AURORA token decisions with token-wise affine readouts, finding opposite evaluator effects when correcting equal numbers of rare and low-margin predictions. | arXiv | 2026.06 | — |
 | **Posterior Refinement** [◆](docs/core-systems.md#system-agarwal2026posterior "Core system in the survey's lookup table (Appendix F)") | [Posterior Refinement: Fast Language Generation via Any-Order Flow Maps](https://arxiv.org/abs/2606.24773)<br>Equips flow map language models with masking-style noise schedules and per-token posterior consistency scores, then commits selected endpoint predictions between flow-map rounds and re-noises the rest. | arXiv | 2026.06 | [![GitHub stars](https://img.shields.io/github/stars/MananAg007/posterior-refinement?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/MananAg007/posterior-refinement) |
-| — | [Continuous Language Diffusion as a Decoder-Interface Problem](https://arxiv.org/abs/2606.08810)<br>Frames continuous language diffusion as a decoder-interface problem, tracing reliable ELF denoising to decoder basins, and shows literal early-exit monitoring saves denoiser calls yet increases elapsed time. | arXiv | 2026.06 | — |
 | **STAR-LDM** | [Stop-Think-AutoRegress: Language Modeling with Latent Diffusion Planning](https://arxiv.org/abs/2602.20528)<br>Pauses autoregressive generation to refine a semantic continuation plan by latent diffusion, mapping it into soft prompts the integrated backbone follows, and supports attribute steering via lightweight classifiers. | COLM 2025 | 2026.02 | [![GitHub stars](https://img.shields.io/github/stars/justinlovelace/STAR-LDM?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/justinlovelace/STAR-LDM) |
 | **CoM-DAD** | [Bridging the Discrete-Continuous Gap: Unified Multimodal Generation via Coupled Manifold Discrete Absorbing Diffusion](https://arxiv.org/abs/2601.04056)<br>Decouples semantic planning from token synthesis for unified multimodal generation, diffusing a continuous sentence-level plan and realizing it through an absorbing discrete-diffusion decoder. | arXiv | 2026.01 | — |
 
@@ -487,10 +492,12 @@ The survey organizes the literature around **three coupled design dimensions**:
 
 | Model | Paper | Venue | Date | Code |
 | :-- | :-- | :--: | :--: | :--: |
+| **ChainFlow** | [ChainFlow: Few-Step Latent Flow Matching for Speculative Decoding](https://arxiv.org/abs/2611.08669)<br>Drafts token blocks with one or two flow steps over compressed target-model hidden states, using feedback between token predictions before autoregressive verification. | arXiv | 2026.11 | [![GitHub stars](https://img.shields.io/github/stars/Cosmos-YTU/chain-flow?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/Cosmos-YTU/chain-flow) |
 | **Noise Your Prompt** [◆](docs/core-systems.md#system-jung2026noise "Core system in the survey's lookup table (Appendix F)") | [Noise Your Prompt: Noising Conditioning Tokens in Continuous Diffusion Language Models](https://openreview.net/forum?id=carxDjFbtO)<br>Noises a flow language model's prompt to the response's noise level on a fraction of training examples, substantially improving combinatorial puzzle accuracy and summarization quality–diversity frontiers but not open-domain dialogue. | TMLR 2026 | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/LateralIntelligence/noise-your-prompt?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/LateralIntelligence/noise-your-prompt) |
 | **FlashMap** [◆](docs/core-systems.md#system-shen2026flashmap "Core system in the survey's lookup table (Appendix F)") | [FlashMap: Flow Map Speculative Decoding](https://arxiv.org/abs/2610.24365)<br>Drafts 16-token speculative blocks in one or two steps with a flow map conditioned on a Qwen3 target's hidden states, delivering multi-fold wall-clock speedups while preserving the target's exact output distribution. | arXiv | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/al-jshen/flashmap?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/al-jshen/flashmap) |
 | **Probe Guidance** [◆](docs/core-systems.md#system-dilip2026guide "Core system in the survey's lookup table (Appendix F)") | [How to Guide Your Language Flow](https://arxiv.org/abs/2609.19356)<br>Derives an autoguidance-style weak prediction from a small MLP probe on frozen early-layer states, lowering generative perplexity at matched entropy and improving zero-shot multiple-choice accuracy for negligible extra FLOPs. | arXiv | 2026.09 | — |
 | **Diffinity** [◆](docs/core-systems.md#system-kim2026continuous "Core system in the survey's lookup table (Appendix F)") | [Continuous Diffusion Models Can Obey Formal Syntax](https://proceedings.mlr.press/v306/kim26b.html)<br>Guides Plaid sampling toward regular-expression constraints without training, replacing the classifier with a token-aligned finite automaton whose exact log-acceptance gradients come from dynamic programming. | ICML 2026 | 2026.02 | [![GitHub stars](https://img.shields.io/github/stars/large-loris-models/Diffinity?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/large-loris-models/Diffinity) |
+| **JC-MC** | [Steering Embedded Language Flows with Formal Constraints](https://neurips.cc/virtual/2026/175961)<br>Guides ELF with gradients of regular-expression acceptance through its decoder, raising macro constraint satisfaction from 87.25% with one endpoint to 94.42% with four Gaussian endpoint samples. | NeurIPS 2026 DiffuLM Workshop | 2026 | — |
 | — | [Control Enters Through the Memory: Self-Conditioning as a Control Interface in Continuous Language Flows](https://openreview.net/forum?id=E69E9arCnW)<br>Writes the decoder's reward gradient into a continuous language flow's self-conditioning memory at each intermediate step, without a state push, improving held-out keyword coverage over state guidance at approximately equal wall-clock cost. | ICLR 2027 submission | 2026 | — |
 | **LQG** | [Choose Before You Decode: Latent Q-Guided Generation for Diffusion Language Models](https://openreview.net/forum?id=USTceERA7Z)<br>Scores candidate latent states of a diffusion language model with a Q-function, pruning low-value candidates so the choice is made before decoding to text. | ICLR 2027 submission | 2026 | — |
 | **GuideDiffuSeq** | [Understanding the Quality-Diversity Trade-off in Diffusion Language Models](https://arxiv.org/abs/2503.10683)<br>Tunes the quality–diversity trade-off of embedding-space sequence-to-sequence diffusion with classifier-free guidance and stochastic clamping, giving a temperature-like knob that can improve generation quality. | arXiv | 2025.03 | [![GitHub stars](https://img.shields.io/github/stars/zzbuzzard/GuideDiffuSeq?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/zzbuzzard/GuideDiffuSeq) |
@@ -574,6 +581,7 @@ The survey organizes the literature around **three coupled design dimensions**:
 | **Multimodal CoBit** | [Multimodal Co-Generation With Continuous Bitstream Diffusion](https://arxiv.org/abs/2610.14349)<br>Reuses continuous bitstream diffusion from language modeling for multimodal co-generation, letting one checkpoint perform joint or conditional image–text and speech–text generation by choosing which bitstream parts are observed. | arXiv | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/GBATZOLIS/BitstreamDiffusion?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/GBATZOLIS/BitstreamDiffusion) |
 | **Modaliff** | [Modaliff: A Unified Token Diffusion Model for Any-to-Any Generation](https://arxiv.org/abs/2610.25533)<br>Assembles native text, image, and audio latent sequences into one token sequence with per-token attributes and role-based positional embeddings, so a single denoiser learns any-to-any generation from bimodal pairs. | arXiv | 2026.10 | — |
 | **JUICE** [◆](docs/core-systems.md#system-li2026juice "Core system in the survey's lookup table (Appendix F)") | [JUICE: Unified Multimodal Modeling in Pretrained Representation Spaces](https://arxiv.org/abs/2610.28801)<br>Denoises frozen Flan-T5 text states and SigLIP2 image features in one flow-matching Transformer, trailing a matched autoregressive-text baseline on caption CIDEr (88.80 vs 160.52) at near-equal CLIPScore. | arXiv | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/Ced3-han/JUICE-Code?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/Ced3-han/JUICE-Code) |
+| **Uni-LaDiR** | [Uni-LaDiR: Latent Diffusion Unifies Multimodal Reasoning](https://arxiv.org/abs/2609.19878)<br>Encodes multimodal reasoning steps in a shared latent space and learns a flow to generate latent thought blocks that condition a vision-language model’s text answers. | arXiv | 2026.09 | — |
 | **MF-1** [◆](docs/core-systems.md#system-tao2026multimodal "Core system in the survey's lookup table (Appendix F)") | [Multimodal Flow: Unified Flow Modeling of Language and Vision in Embedding Spaces](https://arxiv.org/abs/2609.40362)<br>Organizes eight-token T5 text blocks and SigLIP2 image chunks into ordered continuous hyperchunks for one chunk-causal flow backbone, outscoring a matched autoregressive-text model on GQA, VQAv2, MMBench, and SEED-Bench. | arXiv | 2026.09 | [![GitHub stars](https://img.shields.io/github/stars/hustvl/Multimodal-Flow?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/hustvl/Multimodal-Flow) |
 | **BIT** [◆](docs/core-systems.md#system-guo2026there "Core system in the survey's lookup table (Appendix F)") | [There and Back Again: Bidirectional Diffusion Bridges for Multimodality Translation](https://arxiv.org/abs/2608.27885)<br>Connects fixed token embeddings and image codes through a Brownian bridge, achieving lower image-to-text generative perplexity than its noise-started diffusion baseline while retaining comparable CLIP alignment to its deterministic-flow baseline. | arXiv | 2026.08 | — |
 | **GenFirst** | [GenFirst: Generation Before Reconstruction for Stable End-to-End Latent Generative Modeling](https://arxiv.org/abs/2608.29335)<br>Studies end-to-end training of a VAE and latent generative model, identifying the KL entropy term as essential against latent collapse and placing generation before reconstruction for stability. | arXiv | 2026.08 | — |
@@ -781,5 +789,5 @@ If you find the survey or this list useful, please cite:
     <img src="assets/tokenrhythm-dark.svg" alt="TokenRhythm" width="260">
   </picture>
   <br>
-  <sub>Maintained by TokenRhythm Technologies · literature coverage through 8 November 2026.</sub>
+  <sub>Maintained by TokenRhythm Technologies · literature coverage through 18 November 2026.</sub>
 </p>
