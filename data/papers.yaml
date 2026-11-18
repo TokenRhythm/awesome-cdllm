@@ -10,7 +10,7 @@
   paper: https://www.alphaxiv.org/abs/2611.continuous-diffusion-flow-language-models
   code: sophtang/Awesome-Continuous-Language-Models
   category: surveys
-  summary: Organizes continuous language models by text representation, training objective, and sampling strategy, tracing how flow maps and distillation adapted from image generation enable few-step text generation.
+  summary: Organizes continuous diffusion and flow language models by text representation, generative dynamics, and sampling, and connects few-step flow maps and distillation to advances in image and video generation.
 - id: oba2026diffusion
   title: 'Diffusion Language Models: Foundations and Frontiers of Non-Autoregressive Language Generation'
   authors: Daisuke Oba, Danushka Bollegala
@@ -19,7 +19,7 @@
   paper: https://aclanthology.org/2026.aacl-tutorials.6/
   project: https://dllm-aacl.github.io/
   category: surveys
-  summary: Introduces diffusion language modeling and parallel decoding, compares how studies measure generation speed, and discusses continuous flow-based language models alongside discrete formulations.
+  summary: Maps diffusion language modeling for NLP researchers, centering on discrete and masked formulations, efficient inference, and post-training, and presents flow-based and flow-map language modeling as an open frontier.
 - id: yu2026latent
   name: The Latent Space
   title: 'The Latent Space: Foundation, Evolution, Mechanism, Ability, and Outlook'
@@ -320,7 +320,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: rounding / vocab. head
     task: MT; summarization
-    section: App. G.8
+    section: —
 - id: gulrajani2023likelihood
   name: Plaid
   title: Likelihood-Based Diffusion Language Models
@@ -470,7 +470,7 @@
     transition: Gaussian diffusion; latent blocks
     decoder: rounding / vocab. head
     task: multi-token LM generation
-    section: App. G.8
+    section: —
 - id: chemseddine2026spherical
   title: Spherical Flows for Sampling Categorical Data
   authors: Jannis Chemseddine, Gregor Kornhardt, Gabriele Steidl
@@ -497,7 +497,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: rounding / vocab. head
     task: unconditional LM
-    section: App. G.8
+    section: §3.1
 - id: anonymous2026inside
   title: 'Inside the Scaling of Riemannian Flow Language Models: Geometry, Generation, and Conditioning'
   authors: Anonymous
@@ -756,7 +756,7 @@
     transition: flow matching; full sequence
     decoder: shared contextual readout
     task: unconditional LM; MT; summarization
-    section: App. G.8
+    section: —
 - id: hu2026elf
   name: ELF
   title: 'ELF: Embedded Language Flows'
@@ -1672,12 +1672,12 @@
   name: LAW
   title: 'Loopholing All the Way: Language Modeling with pure Self-Conditioning'
   authors: Adrien Deschenaux, Nadezhda Ilieva, Justin Deschenaux, Manuel Madeira, Dorina Thanou, Aurélien Lucchi, Antonio Orvieto, Caglar Gulcehre, Pascal Frossard
-  venue: NeurIPS 2026 BeNTo Workshop
+  venue: arXiv
   date: 2026-10
   paper: https://arxiv.org/abs/2610.30068
   code: ilievanadezhda/law
   category: train-schedule
-  summary: Passes each position’s expected token embedding to the next denoising step and decodes tokens only at the end, improving GSM8K accuracy when fine-tuning Duo.
+  summary: Passes each generated position’s expected token embedding to the next denoising step and decodes tokens only at the end, improving GSM8K accuracy when fine-tuning Duo.
 - id: luo2026designing
   name: LangDiT
   title: Designing Transformers for Continuous Diffusion Language Models
@@ -1903,7 +1903,7 @@
   name: R-WGF
   title: One-Step Generation via Riemannian Wasserstein Gradient Flows
   authors: David Li, Chanhyuk Lee, Jaehoon Yoo, Nikita Gushchin, Floor Eijkelboom, Eric Moulines, Maxim Panov, Alexander Korotin, Seunghoon Hong, Jinwoo Kim
-  venue: NeurIPS 2026 DiffuLM Workshop
+  venue: NeurIPS 2026 Workshop
   date: 2026-10
   paper: https://arxiv.org/abs/2610.04454
   category: sample-fewstep
@@ -1936,24 +1936,6 @@
   code: ellakemperman/adaptive-second-order-diffusion-solvers
   category: sample-fewstep
   summary: Controls step sizes of second-order stochastic diffusion solvers with a proportional-integral rule on noise-normalized error, and aggregates per-sample trajectories into a fixed schedule for image and language data.
-- id: oba2026bct
-  name: BCT
-  title: 'BCT: Bayes-Consistent Tempering for Flow Language Models'
-  authors: Daisuke Oba, Hiroki Furuta, Naoaki Okazaki
-  venue: arXiv
-  date: 2026-10
-  paper: https://arxiv.org/abs/2610.27641
-  category: sample-fewstep
-  summary: Makes temperature consistent across the endpoint, bridge, and velocity of posterior-induced flow language models, substantially improving S-FLM's low-temperature math reasoning accuracy over standard tempering and narrowing the gap to discrete diffusion.
-  lookup:
-    group: Learned token lookup
-    method: BCT
-    year: 2026
-    target: token CE
-    transition: flow matching; full sequence
-    decoder: rounding / vocab. head
-    task: GSM8K after TinyGSM training; Sudoku-Hard
-    section: §5.1
 - id: kim2026gumbel
   name: GSF
   title: 'Gumbel Straight Flow: Distilling Autoregressive Models into One-step Flow Maps'
@@ -2298,7 +2280,7 @@
     transition: flow map; full sequence
     decoder: rounding / vocab. head
     task: attribute- and target-word-controlled generation
-    section: App. G.9
+    section: —
 - id: anonymous2026denoising
   name: AIM-FLM
   title: 'The Denoising Estimate Is a State Variable: Joint Refinement for Few-Step Flow Language Models'
@@ -2463,9 +2445,27 @@
     transition: Gaussian diffusion; full sequence
     decoder: rounding / vocab. head
     task: unconditional LM; quality–step tradeoff
-    section: App. G.9
+    section: —
 
 # ---------------------------------------------------------------- decode-readout
+- id: oba2026bct
+  name: BCT
+  title: 'BCT: Bayes-Consistent Tempering for Flow Language Models'
+  authors: Daisuke Oba, Hiroki Furuta, Naoaki Okazaki
+  venue: arXiv
+  date: 2026-10
+  paper: https://arxiv.org/abs/2610.27641
+  category: decode-readout
+  summary: Makes temperature consistent across the endpoint, bridge, and velocity of posterior-induced flow language models, substantially improving S-FLM's low-temperature math reasoning accuracy over standard tempering and narrowing the gap to discrete diffusion.
+  lookup:
+    group: Learned token lookup
+    method: BCT
+    year: 2026
+    target: token CE
+    transition: flow matching; full sequence
+    decoder: rounding / vocab. head
+    task: GSM8K after TinyGSM training; Sudoku-Hard
+    section: §5.2
 - id: yang2026graft
   name: GRAFT
   title: 'GRAFT: Restoring the Missing Sampling Interface in Continuous Diffusion Language Models'
@@ -2510,7 +2510,7 @@
   date: 2026-06
   paper: https://arxiv.org/abs/2606.08810
   category: decode-readout
-  summary: Recovers 97.17% of ELF and 95.74% of AURORA token decisions with token-wise affine readouts, finding opposite evaluator effects when correcting equal numbers of rare and low-margin predictions.
+  summary: Recovers 97.17% of ELF and 95.74% of AURORA native lexical decisions with token-wise affine readouts; versus random repair, equal-count rare-first repair improves pooled evaluator scores while low-margin-first repair worsens them.
 - id: agarwal2026posterior
   name: Posterior Refinement
   title: 'Posterior Refinement: Fast Language Generation via Any-Order Flow Maps'
@@ -2734,9 +2734,9 @@
   name: JC-MC
   title: Steering Embedded Language Flows with Formal Constraints
   authors: Xiao Tu, Yuntong Gu, Xiangming Meng
-  venue: NeurIPS 2026 DiffuLM Workshop
+  venue: NeurIPS 2026 Workshop
   date: '2026'
-  paper: https://neurips.cc/virtual/2026/175961
+  paper: https://openreview.net/forum?id=NRzCFsG5br
   category: sample-guidance
   summary: Guides ELF with gradients of regular-expression acceptance through its decoder, raising macro constraint satisfaction from 87.25% with one endpoint to 94.42% with four Gaussian endpoint samples.
 - id: shen2026flashmap
@@ -3040,7 +3040,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: separate AR decoder
     task: controllable editing
-    section: App. G.1
+    section: —
 - id: wang2024diffusionattacker
   name: DiffusionAttacker
   title: 'DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak'
@@ -3077,7 +3077,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: separate AR decoder
     task: generation, reconstruction, and representation
-    section: App. G.1
+    section: —
 - id: xu2023detime
   name: DeTiME
   title: 'DeTiME: Diffusion-Enhanced Topic Modeling using Encoder-decoder based LLM'
@@ -3270,15 +3270,6 @@
   summary: Enhances generative retrieval by using a diffusion model to generate pseudo-documents that a downstream retriever consumes through constrained decoding.
 
 # ---------------------------------------------------------------- task-multimodal
-- id: kang2026uniladir
-  name: Uni-LaDiR
-  title: 'Uni-LaDiR: Latent Diffusion Unifies Multimodal Reasoning'
-  authors: Haoqiang Kang, Yizhe Zhang, Nikki Lijing Kuang, Jiatao Gu, Yian Ma, Lianhui Qin
-  venue: arXiv
-  date: 2026-09
-  paper: https://arxiv.org/abs/2609.19878
-  category: task-multimodal
-  summary: Encodes multimodal reasoning steps in a shared latent space and learns a flow to generate latent thought blocks that condition a vision-language model’s text answers.
 - id: li2026juice
   name: JUICE
   title: 'JUICE: Unified Multimodal Modeling in Pretrained Representation Spaces'
@@ -3697,7 +3688,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: separate AR decoder
     task: sign language translation
-    section: App. G.3
+    section: —
 - id: wu2024mote
   name: MoTe
   title: 'MoTe: Learning Motion-Text Diffusion Model for Multiple Generation Tasks'
@@ -3724,7 +3715,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: separate parallel decoder
     task: diverse and efficient audio captioning
-    section: App. G.3
+    section: —
 - id: wesego2025multimodal
   name: Diff-MVAE
   title: Multimodal ELBO with Diffusion Decoders
@@ -3828,7 +3819,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: rounding / vocab. head
     task: image captioning
-    section: App. G.3
+    section: —
 - id: bao2023one
   name: UniDiffuser
   title: One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale
@@ -3847,7 +3838,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: separate AR decoder
     task: image captioning and text-to-image
-    section: App. G.3
+    section: —
 - id: luo2023semantic
   name: SCD-Net
   title: Semantic-Conditional Diffusion Networks for Image Captioning
@@ -3866,7 +3857,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: rounding / vocab. head
     task: image captioning
-    section: App. G.3
+    section: —
 - id: xu2022clip
   name: CLIP-Diffusion-LM
   title: 'CLIP-Diffusion-LM: Apply Diffusion Model on Image Captioning'
@@ -3923,7 +3914,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: separate AR decoder
     task: diverse dialogue response generation
-    section: App. G.4
+    section: —
 - id: chen2023controllable
   name: Diffuse-CG
   title: Controllable Conversation Generation with Conversation Structures via Diffusion Models
@@ -3960,7 +3951,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: separate AR decoder
     task: variational dialogue generation
-    section: App. G.4
+    section: —
 
 # ---------------------------------------------------------------- task-code
 - id: han2025discovering

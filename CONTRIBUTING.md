@@ -7,7 +7,7 @@ Thank you for helping keep this list complete and accurate. New papers, correcti
 
 ## Scope
 
-This list tracks **continuous-space diffusion and flow language models**, following the selection criteria of the survey (§1.2 and Appendix E). A paper is in scope when it
+This list tracks **continuous-space diffusion and flow language models**, following the selection criteria of the survey (§1.2). A paper is in scope when it
 
 - generates natural language or code by transforming a **real-valued representation** of the generated unit through one or more continuous updates, as in diffusion, flow matching, flow maps, distilled one-step generators, or drifting. The representation can be token embeddings, logits or simplex coordinates, belief vectors, analog bits, contextual encodings, compressed latent codes, or sentence vectors; **or**
 - studies, evaluates, accelerates, or applies such models.
@@ -54,7 +54,7 @@ Hybrid systems that pair a categorical canvas with a genuinely continuous channe
 
 ### Field guidelines
 
-- **category**: put the paper where the survey would discuss it. State-representation papers go under *The State*; objective, training, and schedule papers under *The Transition*; sampler, decoder, order, and guidance papers under *Sampling and Decoding*; application papers under *Tasks*; and metrics, diagnostics, and theory under *Evaluation, Analysis, and Theory*. Core systems from the survey's lookup table (Appendix F) follow its § column; when that column points to the results synthesis (§6.3), the system is filed by its main contribution instead.
+- **category**: put the paper where the survey would discuss it. State-representation papers go under *The State*; objective, training, and schedule papers under *The Transition*; sampler, decoder, order, and guidance papers under *Sampling and Decoding*; application papers under *Tasks*; and metrics, diagnostics, and theory under *Evaluation, Analysis, and Theory*. Core systems in the companion lookup table ([docs/core-systems.md](docs/core-systems.md)) follow its § column; when that column points to the results synthesis (§6.3), the system is filed by its main contribution instead.
 - **paper**: the canonical landing page (`https://arxiv.org/abs/...`, the ACL Anthology, OpenReview, or the publisher), not a PDF where an abstract page exists.
 - **code**: only the *official* implementation. Third-party reimplementations and paper lists do not count, and a promised but still empty repository should be left out. If the code lives in a subfolder of a larger repository, add `code_path` (for example `code: microsoft/ProphetNet` with `code_path: tree/master/GENIE`). A paper with no code but an official project page can set `project:` to that URL.
 - **summary**: one sentence of 12–30 words that starts with a present-tense verb and ends with a period. Say what the method does and, when the paper reports one, a concrete finding. Avoid "this paper", marketing words, and claims you cannot check against the paper.

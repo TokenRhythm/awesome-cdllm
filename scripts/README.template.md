@@ -47,7 +47,7 @@
 {{CONTENTS}}
 
 > [!TIP]
-> **Reading the tables.** Papers are sorted newest first within each section. *Date* is the arXiv announcement month (taken from the identifier) when an arXiv version exists, otherwise the publication month. ◆ marks the {{CORE_COUNT}} core systems indexed in the survey's lookup table and jumps to that system in [Core Systems at a Glance](docs/core-systems.md). Star badges link to the official code.
+> **Reading the tables.** Papers are sorted newest first within each section. *Date* is the arXiv announcement month (taken from the identifier) when an arXiv version exists, otherwise the publication month. ◆ marks the {{CORE_COUNT}} core systems indexed in the companion lookup table and jumps to that system in [Core Systems at a Glance](docs/core-systems.md). Star badges link to the official code.
 
 <a id="survey-at-a-glance"></a>
 ## 🧭 The Survey at a Glance
@@ -66,7 +66,7 @@ The survey organizes the literature around **three coupled design dimensions**:
 
 1. **Recurring failure modes.** Squared-error regression causes rounding ambiguity and embedding collapse. Noise schedules inherited from images are uninformative. Learned priors mismatch the latents of clean-text autoencoders. Few-step samplers average over modes.
 2. **Sample-quality parity, but a likelihood gap.** Continuous models can match same-scale autoregressive sample quality on prompt continuation, but they still lag in held-out likelihood bounds and require substantially more training compute under current scaling laws, even as the self-conditioned RePlaid matches or improves on discrete masked diffusion in held-out likelihood bounds past compute-optimal budgets.
-3. **Where they win today.** The clearest gains are in gradient-guided structural control, plan-level diversity, image-to-text flow captioning, and task-specific reasoning after targeted fine-tuning.
+3. **Where they win today.** The clearest gains are in gradient-guided structural control, plan and candidate diversity, and math or puzzle reasoning after task-targeted training.
 4. **Few-step generation.** Naive coarse solvers and several undistilled one-step flow maps collapse in entropy; trajectory-consistent distillation and stochastic bridges prevent this.
 5. **Latency.** Standalone continuous generators have not yet surpassed optimized autoregressive baselines in end-to-end latency at matched quality. The matched-quality wall-clock speedups reported to date rely on autoregressive verification of continuous drafts.
 
@@ -96,7 +96,8 @@ The survey organizes the literature around **three coupled design dimensions**:
 | §5 Sampling, the Text Interface, and Generation Order | Few-step samplers, readout and decoders, generation order, guidance | [Sampling, Text Interface, and Order](#sampling) |
 | §6 Tasks, Evidence, and Evaluation | Six capability reviews, evaluation measures, cross-paper empirical comparisons | [Tasks](#tasks) · [Evaluation](#evaluation) |
 | §7 Open Problems | Likelihood and compute gap, precise text recovery, few-step latency, length, interpretability and optimization | [Evaluation, Analysis, and Theory](#evaluation) |
-| App. F–G | Method lookup table and extended catalog of systems | [Core systems at a glance](docs/core-systems.md) · [Tasks](#tasks) |
+| App. A–C | Mathematical details, generated-state diagnostics, the boundary with discrete and hybrid models | [Evaluation, Analysis, and Theory](#evaluation) · [Hybrid states](#state-hybrid) |
+| Companion resources | Method lookup table and task-specific systems beyond the survey's reference list | [Core systems at a glance](docs/core-systems.md) · [Tasks](#tasks) |
 
 <p align="right"><sub><a href="#contents">⬆ Back to contents</a></sub></p>
 
@@ -105,7 +106,7 @@ The survey organizes the literature around **three coupled design dimensions**:
 <a id="core-systems"></a>
 ## 🗺️ Core Systems at a Glance
 
-The survey's method lookup table (Appendix F) lists **{{CORE_COUNT}} core systems** once each, with four standardized attributes: the continuous **state**, the training **target**, the **transition and generation order**, and the **decoder**. It is reproduced, with links, in **[docs/core-systems.md](docs/core-systems.md)**.
+The companion method lookup table lists **{{CORE_COUNT}} core systems** once each, with four standardized attributes: the continuous **state**, the training **target**, the **transition and generation order**, and the **decoder**. It is maintained, with links, in **[docs/core-systems.md](docs/core-systems.md)**.
 
 <a id="related"></a>
 ## 🔗 Related Awesome Lists

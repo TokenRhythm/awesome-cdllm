@@ -137,49 +137,49 @@ groups:
   - id: tasks
     title: Tasks and Applications
     emoji: "🎯"
-    survey: "§6.1, App. G"
+    survey: "§6.1"
     blurb: >-
-      Downstream capabilities, from the six capability reviews of §6.1 and the extended catalog in Appendix G.
+      Downstream capabilities, organized by the six capability reviews of §6.1.
     categories:
       - id: task-control
         title: Controllable Generation and Editing
-        survey: "§6.1.1, App. G.1"
+        survey: "§6.1.1"
         description: >-
           Attribute, syntax, and style control; source-preserving editing and style transfer;
           detoxification, steganography, watermarking, and red-teaming.
       - id: task-seq2seq
         title: Sequence-to-Sequence Generation
-        survey: "§6.1.2, App. G.2"
+        survey: "§6.1.2"
         description: >-
           Source-conditioned transformation: translation, summarization, paraphrase, question
           generation, and data-, table-, or graph-to-text generation.
       - id: task-multimodal
         title: Captioning and Multimodal Generation
-        survey: "§6.1.3, App. G.3"
+        survey: "§6.1.3"
         description: >-
           Image, video, audio, and speech captioning; cross-modal bridges; and joint any-to-any
           generators that keep a continuous text channel.
       - id: task-dialogue
         title: Dialogue and Discourse Planning
-        survey: "§6.1.4, App. G.4"
+        survey: "§6.1.4"
         description: >-
           Dialogue, empathy, and discourse systems that plan with utterance- or paragraph-level
           latent vectors.
       - id: task-code
         title: Code, Structured Outputs, and Synthetic Data
-        survey: "§6.1.5, App. G.5"
+        survey: "§6.1.5"
         description: >-
           Code generation, structured outputs, symbolic expressions, and synthetic or private
           training corpora.
       - id: task-reasoning
         title: Reasoning, Knowledge, and Instruction Following
-        survey: "§6.1.6, App. G.6"
+        survey: "§6.1.6"
         description: >-
           Math and commonsense reasoning, latent thought trajectories, reinforcement-learning
           post-training, retrieval- and knowledge-grounded generation, and instruction following.
       - id: task-domain
         title: Scientific and Domain Applications
-        survey: "App. G.7"
+        survey: "§6.1.3"
         description: >-
           Remote-sensing change captioning, molecular and 3D-shape captioning, radiology report
           generation, and brain-signal decoding.
@@ -190,7 +190,7 @@ groups:
     categories:
       - id: eval-analysis
         title: Evaluation, Analysis, and Theory
-        survey: "§6.2–§7, App. B, D"
+        survey: "§6.2–§7, App. A–B"
         description: >-
           Evaluation measures and likelihood estimators, benchmarks and diagnostics,
           interpretability of generation dynamics, and theory of continuous text generators.

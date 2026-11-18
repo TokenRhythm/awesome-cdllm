@@ -25,7 +25,7 @@ LOOKUP_FIELDS = ("group", "method", "year", "target", "transition", "decoder", "
 DATE_RE = re.compile(r"^\d{4}(-(0[1-9]|1[0-2]))?$")
 REPO_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 
-# Order and labels of the state families in the survey's lookup table (Appendix F).
+# Order and labels of the state families in the companion lookup table.
 LOOKUP_GROUPS = [
     "Learned token lookup",
     "Fixed or pretrained token lookup",
@@ -141,7 +141,7 @@ def paper_table(entries):
         name = f"**{cell(p['name'])}**" if p.get("name") else "—"
         if p.get("lookup"):
             name += (f' [◆](docs/core-systems.md#{system_anchor(p)} '
-                     f'"Core system in the survey\'s lookup table (Appendix F)")')
+                     f'"Core system in the companion lookup table")')
         paper = f"[{cell(p['title'])}]({p['paper']})<br>{cell(p['summary'])}"
         date = str(p["date"]).replace("-", ".")  # a hyphen would let the narrow column wrap
         rows.append(f"| {name} | {paper} | {cell(p['venue'])} | {date} | {code_badge(p)} |")
@@ -289,7 +289,7 @@ def build_core_doc(papers):
         "",
         "# Core Systems at a Glance",
         "",
-        "This page reproduces the method lookup table of the survey (Appendix F). It lists the "
+        "This page is the method lookup table that accompanies the survey. It lists the "
         f"{len(core)} core continuous-space text generation systems once each, grouped by the family of the "
         "generated state, and gives four standardized attributes for each system:",
         "",
@@ -301,7 +301,7 @@ def build_core_doc(papers):
         "sequence, latent blocks, the next vector, the next token, or a growing array).",
         "- **Decoder**: how terminal states become tokens: rounding or a vocabulary head, a shared contextual "
         "readout, a separate parallel or autoregressive (AR) decoder, or a discrete-diffusion decoder.",
-        "- **§**: where the survey discusses the system.",
+        "- **§**: where the survey discusses the system; — marks systems covered only in this list.",
         "",
         "`n/a` means the source does not specify the attribute. Related discrete, hybrid, and pre-diffusion "
         "systems are summarized in Appendix C of the survey, and task-specific configurations are in the "
