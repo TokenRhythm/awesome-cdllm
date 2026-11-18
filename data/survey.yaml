@@ -5,7 +5,7 @@
 title: "Continuous-Space Diffusion and Flow Language Models: A Survey"
 authors: "TokenRhythm Technologies"
 month: "November 2026"
-pages: 114
+pages: 115
 coverage: "18 November 2026"
 list_coverage: "18 November 2026"  # the paper list can run ahead of the survey's cutoff
 pdf: paper/CDLLM_Survey.pdf
@@ -18,7 +18,7 @@ news:
     text: >-
       📄 The survey has been updated ([PDF](paper/CDLLM_Survey.pdf)) and now covers literature through
       18 November 2026. It adds ChainFlow on speculative decoding, LAW on self-conditioning, R-WGF on
-      one-step generation, JC-MC on formal-constraint guidance, a concurrent survey, and a tutorial, and it
+      one-step generation, a concurrent survey, and a tutorial, and it
       follows the November revision of the ELF and AURORA readout study. This list is aligned with the new edition.
   - date: "2026-11"
     text: >-

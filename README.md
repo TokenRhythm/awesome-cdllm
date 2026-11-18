@@ -13,13 +13,13 @@
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
   <a href="paper/CDLLM_Survey.pdf"><img src="https://img.shields.io/badge/Survey-PDF-b31b1b?logo=adobeacrobatreader&logoColor=white" alt="Survey PDF"></a>
   <a href="#citation"><img src="https://img.shields.io/badge/arXiv-coming_soon-lightgrey?logo=arxiv&logoColor=white" alt="arXiv: coming soon"></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/papers-355-2F5D8A" alt="355 papers"></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/papers-354-2F5D8A" alt="354 papers"></a>
   <a href="https://github.com/TokenRhythm/awesome-cdllm/commits/main"><img src="https://img.shields.io/github/last-commit/TokenRhythm/awesome-cdllm?color=2E6B3A" alt="Last commit"></a>
   <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-E9A23B" alt="PRs welcome"></a>
 </p>
 
 <p align="center">
-  <b><a href="paper/CDLLM_Survey.pdf">📄 Read the survey</a></b> · <b><a href="#contents">📚 Browse 355 papers</a></b> · <b><a href="docs/core-systems.md">🗺️ Compare core systems</a></b> · <b><a href="#citation">📝 Cite</a></b>
+  <b><a href="paper/CDLLM_Survey.pdf">📄 Read the survey</a></b> · <b><a href="#contents">📚 Browse 354 papers</a></b> · <b><a href="docs/core-systems.md">🗺️ Compare core systems</a></b> · <b><a href="#citation">📝 Cite</a></b>
 </p>
 
 <p align="center">
@@ -29,7 +29,7 @@
 
 ## 📢 News
 
-- **[2026-11]** 📄 The survey has been updated ([PDF](paper/CDLLM_Survey.pdf)) and now covers literature through 18 November 2026. It adds ChainFlow on speculative decoding, LAW on self-conditioning, R-WGF on one-step generation, JC-MC on formal-constraint guidance, a concurrent survey, and a tutorial, and it follows the November revision of the ELF and AURORA readout study. This list is aligned with the new edition.
+- **[2026-11]** 📄 The survey has been updated ([PDF](paper/CDLLM_Survey.pdf)) and now covers literature through 18 November 2026. It adds ChainFlow on speculative decoding, LAW on self-conditioning, R-WGF on one-step generation, a concurrent survey, and a tutorial, and it follows the November revision of the ELF and AURORA readout study. This list is aligned with the new edition.
 - **[2026-11]** 📌 The paper list now extends past the survey's 24 October cutoff and tracks literature through 8 November 2026, with new papers and the public versions of earlier anonymous submissions.
 - **[2026-10]** 🎉 Our survey **Continuous-Space Diffusion and Flow Language Models: A Survey** is out ([PDF](paper/CDLLM_Survey.pdf)), together with this paper list, which tracks literature through 24 October 2026. The arXiv version is coming soon.
 
@@ -42,7 +42,7 @@
     </td>
     <td valign="top">
       <h3>Continuous-Space Diffusion and Flow Language Models: A Survey</h3>
-      <p><b>TokenRhythm Technologies</b><br>November 2026 · 114 pages · literature through 18 November 2026</p>
+      <p><b>TokenRhythm Technologies</b><br>November 2026 · 115 pages · literature through 18 November 2026</p>
       <p><a href="paper/CDLLM_Survey.pdf">📄 PDF</a> · arXiv (coming soon) · <a href="#citation">📝 BibTeX</a> · <a href="docs/core-systems.md">🗺️ Core-system lookup</a></p>
       <p>The survey organizes continuous-space text generation by <b>state</b>, <b>transition</b>, and <b>text interface</b>, compares published evidence on sample quality, likelihood, controllability, and end-to-end latency, and closes with open problems in likelihood scaling, readout fidelity, few-step serving, representation reuse, and post-training. Use this list to browse the literature, and the <a href="docs/core-systems.md">core-system lookup</a> to compare method configurations.</p>
     </td>
@@ -65,11 +65,11 @@
   - [Prediction Targets and Objectives](#train-objective) (14)
   - [Training Stages and Module Adaptation](#train-recipe) (7)
   - [Noise Schedules and Self-Conditioning](#train-schedule) (17)
-- [🚀 Sampling, the Text Interface, and Generation Order](#sampling) (67)
+- [🚀 Sampling, the Text Interface, and Generation Order](#sampling) (66)
   - [Samplers and Few-Step Generation](#sample-fewstep) (37)
   - [From States to Tokens](#decode-readout) (7)
   - [Generation Order and Length](#decode-order) (11)
-  - [Conditioning and Guidance](#sample-guidance) (12)
+  - [Conditioning and Guidance](#sample-guidance) (11)
 - [🎯 Tasks and Applications](#tasks) (136)
   - [Controllable Generation and Editing](#task-control) (23)
   - [Sequence-to-Sequence Generation](#task-seq2seq) (15)
@@ -498,7 +498,6 @@ The survey organizes the literature around **three coupled design dimensions**:
 | **FlashMap** [◆](docs/core-systems.md#system-shen2026flashmap "Core system in the companion lookup table") | [FlashMap: Flow Map Speculative Decoding](https://arxiv.org/abs/2610.24365)<br>Drafts 16-token speculative blocks in one or two steps with a flow map conditioned on a Qwen3 target's hidden states, delivering multi-fold wall-clock speedups while preserving the target's exact output distribution. | arXiv | 2026.10 | [![GitHub stars](https://img.shields.io/github/stars/al-jshen/flashmap?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/al-jshen/flashmap) |
 | **Probe Guidance** [◆](docs/core-systems.md#system-dilip2026guide "Core system in the companion lookup table") | [How to Guide Your Language Flow](https://arxiv.org/abs/2609.19356)<br>Derives an autoguidance-style weak prediction from a small MLP probe on frozen early-layer states, lowering generative perplexity at matched entropy and improving zero-shot multiple-choice accuracy for negligible extra FLOPs. | arXiv | 2026.09 | — |
 | **Diffinity** [◆](docs/core-systems.md#system-kim2026continuous "Core system in the companion lookup table") | [Continuous Diffusion Models Can Obey Formal Syntax](https://proceedings.mlr.press/v306/kim26b.html)<br>Guides Plaid sampling toward regular-expression constraints without training, replacing the classifier with a token-aligned finite automaton whose exact log-acceptance gradients come from dynamic programming. | ICML 2026 | 2026.02 | [![GitHub stars](https://img.shields.io/github/stars/large-loris-models/Diffinity?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/large-loris-models/Diffinity) |
-| **JC-MC** | [Steering Embedded Language Flows with Formal Constraints](https://openreview.net/forum?id=NRzCFsG5br)<br>Guides ELF with gradients of regular-expression acceptance through its decoder, raising macro constraint satisfaction from 87.25% with one endpoint to 94.42% with four Gaussian endpoint samples. | NeurIPS 2026 Workshop | 2026 | — |
 | — | [Control Enters Through the Memory: Self-Conditioning as a Control Interface in Continuous Language Flows](https://openreview.net/forum?id=E69E9arCnW)<br>Writes the decoder's reward gradient into a continuous language flow's self-conditioning memory at each intermediate step, without a state push, improving held-out keyword coverage over state guidance at approximately equal wall-clock cost. | ICLR 2027 submission | 2026 | — |
 | **LQG** | [Choose Before You Decode: Latent Q-Guided Generation for Diffusion Language Models](https://openreview.net/forum?id=USTceERA7Z)<br>Scores candidate latent states of a diffusion language model with a Q-function, pruning low-value candidates so the choice is made before decoding to text. | ICLR 2027 submission | 2026 | — |
 | **GuideDiffuSeq** | [Understanding the Quality-Diversity Trade-off in Diffusion Language Models](https://arxiv.org/abs/2503.10683)<br>Tunes the quality–diversity trade-off of embedding-space sequence-to-sequence diffusion with classifier-free guidance and stochastic clamping, giving a temperature-like knob that can improve generation quality. | arXiv | 2025.03 | [![GitHub stars](https://img.shields.io/github/stars/zzbuzzard/GuideDiffuSeq?style=flat&logo=github&label=&color=2F5D8A)](https://github.com/zzbuzzard/GuideDiffuSeq) |

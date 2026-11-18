@@ -470,7 +470,7 @@
     transition: Gaussian diffusion; latent blocks
     decoder: rounding / vocab. head
     task: multi-token LM generation
-    section: —
+    section: §1.1
 - id: chemseddine2026spherical
   title: Spherical Flows for Sampling Categorical Data
   authors: Jannis Chemseddine, Gregor Kornhardt, Gabriele Steidl
@@ -756,7 +756,7 @@
     transition: flow matching; full sequence
     decoder: shared contextual readout
     task: unconditional LM; MT; summarization
-    section: —
+    section: §1.1
 - id: hu2026elf
   name: ELF
   title: 'ELF: Embedded Language Flows'
@@ -2730,15 +2730,6 @@
   code: Cosmos-YTU/chain-flow
   category: sample-guidance
   summary: Drafts token blocks with one or two flow steps over compressed target-model hidden states, using feedback between token predictions before autoregressive verification.
-- id: tu2026steering
-  name: JC-MC
-  title: Steering Embedded Language Flows with Formal Constraints
-  authors: Xiao Tu, Yuntong Gu, Xiangming Meng
-  venue: NeurIPS 2026 Workshop
-  date: '2026'
-  paper: https://openreview.net/forum?id=NRzCFsG5br
-  category: sample-guidance
-  summary: Guides ELF with gradients of regular-expression acceptance through its decoder, raising macro constraint satisfaction from 87.25% with one endpoint to 94.42% with four Gaussian endpoint samples.
 - id: shen2026flashmap
   name: FlashMap
   title: 'FlashMap: Flow Map Speculative Decoding'
@@ -3688,7 +3679,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: separate AR decoder
     task: sign language translation
-    section: —
+    section: §2.3
 - id: wu2024mote
   name: MoTe
   title: 'MoTe: Learning Motion-Text Diffusion Model for Multiple Generation Tasks'
@@ -3838,7 +3829,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: separate AR decoder
     task: image captioning and text-to-image
-    section: —
+    section: §1.1
 - id: luo2023semantic
   name: SCD-Net
   title: Semantic-Conditional Diffusion Networks for Image Captioning
@@ -3857,7 +3848,7 @@
     transition: Gaussian diffusion; full sequence
     decoder: rounding / vocab. head
     task: image captioning
-    section: —
+    section: §6.1.3
 - id: xu2022clip
   name: CLIP-Diffusion-LM
   title: 'CLIP-Diffusion-LM: Apply Diffusion Model on Image Captioning'
