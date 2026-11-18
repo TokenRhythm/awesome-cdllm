@@ -55,6 +55,23 @@ class Rendering(unittest.TestCase):
                                  "venue": "arXiv", "date": "2026-05", "category": "surveys"}])
         self.assertIn("| 2026.05 |", table)
 
+    def test_preprint_doi_is_linked(self):
+        survey = {"repo": "owner/repo", "pdf": "paper/x.pdf", "bibkey": "key", "title": "T", "authors": "A",
+                  "arxiv": None, "preprint_doi": "10.20944/preprints202611.1395.v1"}
+        url = "https://doi.org/10.20944/preprints202611.1395.v1"
+        self.assertIn(f'<a href="{url}"><img src="https://img.shields.io/badge/Preprints.org-202611.1395.v1-',
+                      br.render_badges(survey, []))
+        self.assertIn(f'<a href="{url}">Preprints.org</a>', br.render_survey_links(survey))
+        bibtex = br.render_bibtex(survey)
+        self.assertIn("doi          = {10.20944/preprints202611.1395.v1},", bibtex)
+        self.assertIn(f"url          = {{{url}}}", bibtex)
+
+    def test_links_without_preprint_doi(self):
+        survey = {"repo": "owner/repo", "pdf": "paper/x.pdf", "bibkey": "key", "title": "T", "authors": "A",
+                  "arxiv": None}
+        self.assertNotIn("doi.org", br.render_badges(survey, []) + br.render_survey_links(survey))
+        self.assertIn("url          = {https://github.com/owner/repo}", br.render_bibtex(survey))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,6 +1,8 @@
 # Metadata of the survey this list accompanies. Rendered into README.md by
 # scripts/build_readme.py. Update `arxiv` (an arXiv id such as 2610.12345)
 # once the preprint is public; the badges and BibTeX switch over automatically.
+# `preprint_doi` is the Preprints.org DOI. It carries the version (.v1, .v2, ...),
+# so change the suffix when a new version is posted.
 
 title: "Continuous-Space Diffusion and Flow Language Models: A Survey"
 authors: "TokenRhythm Technologies"
@@ -10,10 +12,15 @@ coverage: "18 November 2026"
 list_coverage: "18 November 2026"  # the paper list can run ahead of the survey's cutoff
 pdf: paper/CDLLM_Survey.pdf
 arxiv: null
+preprint_doi: "10.20944/preprints202611.1395.v1"
 repo: TokenRhythm/awesome-cdllm
 bibkey: tokenrhythm2026cdllm
 
 news:
+  - date: "2026-11"
+    text: >-
+      📄 The survey is available as a preprint on Preprints.org:
+      [doi:10.20944/preprints202611.1395.v1](https://doi.org/10.20944/preprints202611.1395.v1).
   - date: "2026-11"
     text: >-
       📄 The survey has been updated ([PDF](paper/CDLLM_Survey.pdf)) and now covers literature through

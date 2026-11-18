@@ -194,6 +194,10 @@ def render_catalog(groups, by_cat):
     return "\n".join(out).rstrip()
 
 
+def preprint_url(survey):
+    return f"https://doi.org/{survey['preprint_doi']}"
+
+
 def render_badges(survey, papers):
     # Plain HTML: Markdown is not processed inside the centered <p> block.
     repo = survey["repo"]
@@ -202,6 +206,12 @@ def render_badges(survey, papers):
         (survey["pdf"], "https://img.shields.io/badge/Survey-PDF-b31b1b?logo=adobeacrobatreader&logoColor=white",
          "Survey PDF"),
     ]
+    if survey.get("preprint_doi"):
+        # 10.20944/preprints202611.1395.v1 -> 202611.1395.v1 (shields.io needs - and _ doubled)
+        label = survey["preprint_doi"].split("/", 1)[-1].replace("preprints", "", 1)
+        label = label.replace("-", "--").replace("_", "__")
+        badges.append((preprint_url(survey), f"https://img.shields.io/badge/Preprints.org-{label}-0F6CBF",
+                       "Preprint on Preprints.org"))
     if survey.get("arxiv"):
         badges.append((f"https://arxiv.org/abs/{survey['arxiv']}",
                        f"https://img.shields.io/badge/arXiv-{survey['arxiv']}-b31b1b?logo=arxiv&logoColor=white",
@@ -227,6 +237,10 @@ def render_bibtex(survey):
         lines += [f"  eprint       = {{{survey['arxiv']}}},",
                   "  archivePrefix = {arXiv},",
                   f"  url          = {{https://arxiv.org/abs/{survey['arxiv']}}}"]
+    elif survey.get("preprint_doi"):
+        lines += ["  howpublished = {Preprints.org},",
+                  f"  doi          = {{{survey['preprint_doi']}}},",
+                  f"  url          = {{{preprint_url(survey)}}}"]
     else:
         lines += [f"  url          = {{https://github.com/{survey['repo']}}}"]
     lines.append("}")
@@ -235,6 +249,8 @@ def render_bibtex(survey):
 
 def render_survey_links(survey):
     links = [f'<a href="{survey["pdf"]}">📄 PDF</a>']
+    if survey.get("preprint_doi"):
+        links.append(f'<a href="{preprint_url(survey)}">Preprints.org</a>')
     if survey.get("arxiv"):
         links.append(f'<a href="https://arxiv.org/abs/{survey["arxiv"]}">arXiv</a>')
     else:
