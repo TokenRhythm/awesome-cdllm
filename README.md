@@ -12,7 +12,7 @@
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
   <a href="paper/CDLLM_Survey.pdf"><img src="https://img.shields.io/badge/Survey-PDF-b31b1b?logo=adobeacrobatreader&logoColor=white" alt="Survey PDF"></a>
-  <a href="https://doi.org/10.20944/preprints202611.1395.v1"><img src="https://img.shields.io/badge/Preprints.org-202611.1395.v1-0F6CBF" alt="Preprint on Preprints.org"></a>
+  <a href="https://doi.org/10.20944/preprints202611.1395.v2"><img src="https://img.shields.io/badge/Preprints.org-202611.1395.v2-0F6CBF" alt="Preprint on Preprints.org"></a>
   <a href="#citation"><img src="https://img.shields.io/badge/arXiv-coming_soon-lightgrey?logo=arxiv&logoColor=white" alt="arXiv: coming soon"></a>
   <a href="#contents"><img src="https://img.shields.io/badge/papers-354-2F5D8A" alt="354 papers"></a>
   <a href="https://github.com/TokenRhythm/awesome-cdllm/commits/main"><img src="https://img.shields.io/github/last-commit/TokenRhythm/awesome-cdllm?color=2E6B3A" alt="Last commit"></a>
@@ -30,7 +30,7 @@
 
 ## 📢 News
 
-- **[2026-11]** 📄 The survey is available as a preprint on Preprints.org: [doi:10.20944/preprints202611.1395.v1](https://doi.org/10.20944/preprints202611.1395.v1).
+- **[2026-11]** 📄 The survey is available as a preprint on Preprints.org: [doi:10.20944/preprints202611.1395.v2](https://doi.org/10.20944/preprints202611.1395.v2).
 - **[2026-11]** 📄 The survey has been updated ([PDF](paper/CDLLM_Survey.pdf)) and now covers literature through 18 November 2026. It adds ChainFlow on speculative decoding, LAW on self-conditioning, R-WGF on one-step generation, a concurrent survey, and a tutorial, and it follows the November revision of the ELF and AURORA readout study. This list is aligned with the new edition.
 - **[2026-11]** 📌 The paper list now extends past the survey's 24 October cutoff and tracks literature through 8 November 2026, with new papers and the public versions of earlier anonymous submissions.
 - **[2026-10]** 🎉 Our survey **Continuous-Space Diffusion and Flow Language Models: A Survey** is out ([PDF](paper/CDLLM_Survey.pdf)), together with this paper list, which tracks literature through 24 October 2026. The arXiv version is coming soon.
@@ -45,7 +45,7 @@
     <td valign="top">
       <h3>Continuous-Space Diffusion and Flow Language Models: A Survey</h3>
       <p><b>TokenRhythm Technologies</b><br>November 2026 · 115 pages · literature through 18 November 2026</p>
-      <p><a href="paper/CDLLM_Survey.pdf">📄 PDF</a> · <a href="https://doi.org/10.20944/preprints202611.1395.v1">Preprints.org</a> · arXiv (coming soon) · <a href="#citation">📝 BibTeX</a> · <a href="docs/core-systems.md">🗺️ Core-system lookup</a></p>
+      <p><a href="paper/CDLLM_Survey.pdf">📄 PDF</a> · <a href="https://doi.org/10.20944/preprints202611.1395.v2">Preprints.org</a> · arXiv (coming soon) · <a href="#citation">📝 BibTeX</a> · <a href="docs/core-systems.md">🗺️ Core-system lookup</a></p>
       <p>The survey organizes continuous-space text generation by <b>state</b>, <b>transition</b>, and <b>text interface</b>, compares published evidence on sample quality, likelihood, controllability, and end-to-end latency, and closes with open problems in likelihood scaling, readout fidelity, few-step serving, representation reuse, and post-training. Use this list to browse the literature, and the <a href="docs/core-systems.md">core-system lookup</a> to compare method configurations.</p>
     </td>
   </tr>
@@ -779,8 +779,8 @@ If you find the survey or this list useful, please cite:
   author       = {{TokenRhythm Technologies}},
   year         = {2026},
   howpublished = {Preprints.org},
-  doi          = {10.20944/preprints202611.1395.v1},
-  url          = {https://doi.org/10.20944/preprints202611.1395.v1}
+  doi          = {10.20944/preprints202611.1395.v2},
+  url          = {https://doi.org/10.20944/preprints202611.1395.v2}
 }
 ```
 
